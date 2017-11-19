@@ -1,13 +1,13 @@
-#“Terms of Service; Didn't Read” terminal script
+# “Terms of Service; Didn't Read” terminal script
 
-##Basic Information
+## Basic Information
 
 This is a simple project to fetch data from [tosdr](http://tosdr.org/) and
 dump into the console.
 
 To do so we are using the Python language and the [tosdr's api](https://tosdr.org/api.html)
 
-##Commands
+## Commands
 
 ```
 tosdr.py -h
