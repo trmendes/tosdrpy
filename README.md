@@ -15,10 +15,19 @@ tosdr.py -h
 It will bring you some messages
 
 ```
-tosfr.py facebook
+tosdr.py -s facebook
+```
+It will bring just topics about the Facebook's terms of use resumed by the [tosdr's team](http://tosdr.org)
+
+![simple](./img/simple.png)
+
+```
+tosdr.py facebook
 ```
 
-It will bring you information about the Facebook' terms of use resumed by the [tosdr's team](http://tosdr.org/)
+It will bring you information about the Facebook's terms of use resumed by the [tosdr's team](http://tosdr.org/)
+
+![complete](./img/complete.png)
 
 ```
 tosdr.py google
