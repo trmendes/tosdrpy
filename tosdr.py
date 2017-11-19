@@ -13,7 +13,6 @@ __status__ = "Beta"
 __link__ = "https://gitlab.com/tmendes/tosdrpy"
 import requests
 import re
-import sys
 import argparse
 
 def cleanhtml(raw_html):
@@ -52,15 +51,17 @@ def rating(value):
     else:
         print("Tosdr haven't sufficiently reviewed the terms yet.")
 
-def run_from_terminal(:
 def main():
-
+    parser = argparse.ArgumentParser(description="making terms of service easier to read")
+    parser.add_argument('--discussion', '-d', action='store_true', help='show links to the discussions')
+    parser.add_argument('--simple', '-s', action='store_true', help='to print less info')
+    parser.add_argument('service_name', type=str)
     args = parser.parse_args()
-    service = sys.argv[1]
-    url = "https://tosdr.org/api/1/service/%s.json" % (service)
+
+    url = "https://tosdr.org/api/1/service/%s.json" % (args.service_name)
 
     print("\033[0;1m--== Terms of Service: Didn't Read ==-- \033[0;0m\n")
-    print("...hold a second or more.... checking for " + service)
+    print("...hold a second or more.... checking for " + args.service_name)
 
     try:
         r = requests.get(url)
@@ -83,10 +84,14 @@ def main():
             tosdr = info['tosdr']
 
             print(score_colors[tosdr['point']] + info['title'] + '\033[0;0m')
-            print(cleanhtml(tosdr['tldr']))
+            if args.simple is False:
+                print(cleanhtml(tosdr['tldr']))
+            if args.discussion:
+                print("link: " + info['discussion'])
 
         rating(ratingv)
-        show_links(links)
+        if args.simple is False:
+            show_links(links)
 
     else:
         print("\nOw $@#$%...I cant't find any information about " + service)
