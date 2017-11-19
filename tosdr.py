@@ -10,11 +10,11 @@ __version__ = "1.0.0"
 __maintainer__ = "Thiago Mendes"
 __email__ = "tribeirom@gmail.com"
 __status__ = "Beta"
-__link__ = ""
+__link__ = "https://gitlab.com/tmendes/tosdrpy"
 import requests
 import re
 import sys
-
+import argparse
 
 def cleanhtml(raw_html):
     cleanr = re.compile('<.*?>')
@@ -52,8 +52,10 @@ def rating(value):
     else:
         print("Tosdr haven't sufficiently reviewed the terms yet.")
 
-
+def run_from_terminal(:
 def main():
+
+    args = parser.parse_args()
     service = sys.argv[1]
     url = "https://tosdr.org/api/1/service/%s.json" % (service)
 
