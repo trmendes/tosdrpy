@@ -99,7 +99,7 @@ def main():
             show_links(links)
 
     else:
-        print("\nOw $@#$%...I cant't find any information about " + service)
+        print("\nOw $@#$%...I cant't find any information about " + args.service_name)
         print("anyway....")
 
     print("\n\033[0;1m--== Thanks to ==-- \033[0;0m\n")
