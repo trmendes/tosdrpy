@@ -19,7 +19,7 @@ tosdr.py -s facebook
 ```
 It will bring just topics about the Facebook's terms of use resumed by the [tosdr's team](http://tosdr.org)
 
-![simple](./img/simple.png)
+![simple](https://gitlab.com/tmendes/tosdrpy/blob/master/img/simlpe.png)
 
 ```
 tosdr.py facebook
@@ -27,7 +27,7 @@ tosdr.py facebook
 
 It will bring you information about the Facebook's terms of use resumed by the [tosdr's team](http://tosdr.org/)
 
-![complete](./img/complete.png)
+![complete](https://gitlab.com/tmendes/tosdrpy/raw/master/img/complete.png)
 
 ```
 tosdr.py google
