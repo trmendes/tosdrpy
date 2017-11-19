@@ -23,11 +23,15 @@ def cleanhtml(raw_html):
 
 def print_link_info(links, key):
     try:
-        if links[key]:
-            print(links[key]['name'] + ": " + cleanhtml(links[key]['url']))
+        print(links[key]['name'] + ": " + cleanhtml(links[key]['url']))
     except KeyError:
         pass
 
+def print_title(score_colors, tosdr, info):
+    try:
+        print(score_colors[tosdr['point']] + info['title'] + '\033[0;0m')
+    except KeyError:
+        pass
 
 def show_links(links):
     print("\n\033[0;1m--== If you want to know more about it ==-- \033[0;0m\n")
@@ -83,7 +87,8 @@ def main():
             info = points_data[points[idx]]
             tosdr = info['tosdr']
 
-            print(score_colors[tosdr['point']] + info['title'] + '\033[0;0m')
+            print_title(score_colors, tosdr, info)
+
             if args.simple is False:
                 print(cleanhtml(tosdr['tldr']))
             if args.discussion:
