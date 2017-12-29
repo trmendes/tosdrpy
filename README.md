@@ -35,6 +35,10 @@ tosdr.py google
 
 The same as before but now you will get some information about google
 
+## Help
+
+If you have any idea how to make this script better just drop us a message :)
+
 ## Developers
 
 Thiago Ribeiro Mendes<br/ >
